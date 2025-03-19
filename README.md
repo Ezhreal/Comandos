@@ -1,4 +1,4 @@
-# Comandos Essenciais para Desenvolvedores Fullstack em 2025
+# Comandos Essenciais
 
 ## Git
 
