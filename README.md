@@ -2,57 +2,64 @@
 
 ## Git
 
-# Fundamentos
-git init              # Inicializa um repositório
-git clone [url]       # Clona um repositório remoto
-git status            # Verifica o estado do repositório
-git add [arquivo]     # Adiciona arquivos ao staged
-git commit -m "msg"   # Cria um commit com mensagem
-git push origin main  # Envia commits para o repositório remoto
+## Git
 
-# Branches
-git branch                    # Lista branches locais
-git branch -a                 # Lista todas as branches (locais e remotas)
-git branch [nome]             # Cria uma nova branch
-git checkout [branch]         # Muda para uma branch
-git checkout -b [nome]        # Cria e muda para uma nova branch
-git merge [branch]            # Integra uma branch à atual
-git branch -d [branch]        # Remove uma branch local
-
-# Tags
-git tag                       # Lista as tags
-git tag -a v1.0.0 -m "msg"    # Cria uma tag anotada
-git push origin --tags        # Envia todas as tags para o remoto
-git tag -d [tag]              # Remove uma tag local
-git push origin :refs/tags/[tag] # Remove tag remota
-
-# Histórico e Comparação
-git log                       # Mostra o histórico de commits
-git log --oneline --graph     # Visualiza histórico em formato gráfico
-git diff [commit1] [commit2]  # Mostra diferenças entre commits
-git blame [arquivo]           # Mostra quem modificou cada linha
-
-# Desfazendo mudanças
-git reset --hard HEAD         # Descarta todas as mudanças locais
-git revert [commit]           # Cria novo commit que desfaz mudanças
-git restore [arquivo]         # Restaura arquivo para versão do HEAD
-git restore --staged [arquivo] # Remove arquivo do staged
-
-# Trabalho com remotos
-git remote -v                 # Lista remotos
-git remote add [nome] [url]   # Adiciona novo remoto
-git fetch [remoto]            # Baixa mudanças do remoto
-git pull [remoto] [branch]    # Baixa e integra mudanças
-
-# Stash
-git stash                     # Salva mudanças temporariamente
-git stash list                # Lista stashes salvos
-git stash pop                 # Aplica e remove o último stash
-git stash drop                # Remove o último stash
-
-# Rebase e Cherry-pick
-git rebase [branch]           # Reaplica commits sobre outra branch
-git cherry-pick [commit]      # Aplica commit específico na branch atual
+| Comando | Uso |
+|---------|-----|
+| `git init` | Inicializa um repositório Git |
+| `git clone [url]` | Clona um repositório remoto |
+| `git add [arquivo]` | Adiciona arquivos para staged |
+| `git add .` | Adiciona todos os arquivos modificados para staged |
+| `git commit -m "mensagem"` | Cria um commit com mensagem |
+| `git commit --amend` | Modifica o último commit |
+| `git push` | Envia commits para o repositório remoto |
+| `git pull` | Atualiza repositório local com mudanças remotas |
+| `git fetch` | Busca atualizações sem mesclar |
+| `git branch` | Lista todas as branches |
+| `git branch -a` | Lista branches locais e remotas |
+| `git branch [nome]` | Cria uma nova branch |
+| `git checkout [branch]` | Muda para outra branch |
+| `git switch [branch]` | Muda para outra branch (Git moderno) |
+| `git checkout -b [nome]` | Cria e muda para nova branch |
+| `git merge [branch]` | Integra uma branch à atual |
+| `git rebase [branch]` | Reaplica commits em outro branch |
+| `git status` | Mostra arquivos modificados |
+| `git log` | Mostra histórico de commits |
+| `git log --graph --oneline` | Visualiza histórico em formato gráfico |
+| `git log --follow [arquivo]` | Mostra histórico de um arquivo específico |
+| `git diff` | Mostra mudanças não adicionadas ao stage |
+| `git diff --staged` | Mostra mudanças entre stage e último commit |
+| `git diff [branch1] [branch2]` | Compara duas branches |
+| `git stash` | Armazena mudanças temporariamente |
+| `git stash list` | Lista todas as mudanças armazenadas |
+| `git stash pop` | Recupera mudanças armazenadas mais recentes |
+| `git stash apply [stash@{n}]` | Aplica um stash específico sem removê-lo |
+| `git stash drop [stash@{n}]` | Remove um stash específico |
+| `git reset --hard HEAD` | Descarta todas as mudanças locais |
+| `git reset --soft HEAD~1` | Desfaz o último commit mantendo as mudanças |
+| `git restore [arquivo]` | Restaura arquivo para versão anterior |
+| `git restore --staged [arquivo]` | Remove arquivo do stage |
+| `git cherry-pick [hash]` | Aplica commit específico na branch atual |
+| `git revert [hash]` | Cria um novo commit que desfaz as mudanças de outro |
+| `git tag` | Lista todas as tags |
+| `git tag [nome]` | Cria uma tag leve no commit atual |
+| `git tag -a [nome] -m "mensagem"` | Cria uma tag anotada com mensagem |
+| `git tag -a [nome] [hash] -m "mensagem"` | Cria tag em um commit específico |
+| `git push origin [tag]` | Envia uma tag específica para o remoto |
+| `git push --tags` | Envia todas as tags para o remoto |
+| `git tag -d [tag]` | Remove uma tag local |
+| `git push --delete origin [tag]` | Remove uma tag remota |
+| `git blame [arquivo]` | Mostra quem modificou cada linha de um arquivo |
+| `git bisect start` | Inicia busca binária para encontrar bug |
+| `git bisect good/bad` | Marca commit como bom/ruim durante bisect |
+| `git remote -v` | Lista repositórios remotos |
+| `git remote add [nome] [url]` | Adiciona um novo repositório remoto |
+| `git remote set-url [nome] [url]` | Altera URL do repositório remoto |
+| `git worktree add [path] [branch]` | Cria um novo worktree para trabalhar em paralelo |
+| `git reflog` | Mostra histórico de referências do Git (útil para recuperar commits perdidos) |
+| `git clean -fd` | Remove arquivos não rastreados e diretórios |
+| `git submodule add [url] [path]` | Adiciona um submódulo ao repositório |
+| `git submodule update --init --recursive` | Inicializa e atualiza submódulos |
 
 ## Docker
 
